@@ -1,36 +1,36 @@
 from django.urls import reverse
 
-from openwisp_firmware_upgrader.swapper import load_model
-from openwisp_firmware_upgrader.tests.test_admin import TestAdmin as BaseTestAdmin
-from openwisp_firmware_upgrader.tests.test_admin import (
+from immunity_firmware_upgrader.swapper import load_model
+from immunity_firmware_upgrader.tests.test_admin import TestAdmin as BaseTestAdmin
+from immunity_firmware_upgrader.tests.test_admin import (
     TestAdminTransaction as BaseTestAdminTransaction,
 )
-from openwisp_firmware_upgrader.tests.test_api import (
+from immunity_firmware_upgrader.tests.test_api import (
     TestBatchUpgradeOperationViews as BaseTestBatchUpgradeOperationViews,
 )
-from openwisp_firmware_upgrader.tests.test_api import (
+from immunity_firmware_upgrader.tests.test_api import (
     TestBuildViews as BaseTestBuildViews,
 )
-from openwisp_firmware_upgrader.tests.test_api import (
+from immunity_firmware_upgrader.tests.test_api import (
     TestCategoryViews as BaseTestCategoryViews,
 )
-from openwisp_firmware_upgrader.tests.test_api import (
+from immunity_firmware_upgrader.tests.test_api import (
     TestFirmwareImageViews as BaseTestFirmwareImageViews,
 )
-from openwisp_firmware_upgrader.tests.test_api import (
+from immunity_firmware_upgrader.tests.test_api import (
     TestOrgAPIMixin as BaseTestOrgAPIMixin,
 )
-from openwisp_firmware_upgrader.tests.test_models import TestModels as BaseTestModels
-from openwisp_firmware_upgrader.tests.test_models import (
+from immunity_firmware_upgrader.tests.test_models import TestModels as BaseTestModels
+from immunity_firmware_upgrader.tests.test_models import (
     TestModelsTransaction as BaseTestModelsTransaction,
 )
-from openwisp_firmware_upgrader.tests.test_openwrt_upgrader import (
+from immunity_firmware_upgrader.tests.test_openwrt_upgrader import (
     TestOpenwrtUpgrader as BaseTestOpenwrtUpgrader,
 )
-from openwisp_firmware_upgrader.tests.test_private_storage import (
+from immunity_firmware_upgrader.tests.test_private_storage import (
     TestPrivateStorage as BaseTestPrivateStorage,
 )
-from openwisp_firmware_upgrader.tests.test_tasks import TestTasks as BaseTestTasks
+from immunity_firmware_upgrader.tests.test_tasks import TestTasks as BaseTestTasks
 
 BatchUpgradeOperation = load_model('BatchUpgradeOperation')
 Build = load_model('Build')
@@ -112,7 +112,7 @@ class TestAdminTransaction(BaseTestAdminTransaction):
 
 
 class TestModels(BaseTestModels):
-    app_label = 'openwisp2.sample_firmware_upgrader'
+    app_label = 'immunity2.sample_firmware_upgrader'
 
 
 class TestModelsTransaction(BaseTestModelsTransaction):

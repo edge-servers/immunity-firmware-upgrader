@@ -2,7 +2,7 @@
 
 from django.db import migrations
 
-from openwisp_firmware_upgrader.migrations import create_device_firmware_for_connections
+from immunity_firmware_upgrader.migrations import create_device_firmware_for_connections
 
 
 def create_device_firmware_for_connections_helper(apps, schema_editor):

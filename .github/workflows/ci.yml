@@ -1,5 +1,5 @@
 ---
-name: OpenWISP Firmware Upgrader CI Build
+name: Immunity Firmware Upgrader CI Build
 
 on:
   push:
@@ -56,7 +56,7 @@ jobs:
           pip install -U pip wheel setuptools
           pip install -U -r requirements-test.txt
 
-      - name: Install openwisp-firmware-upgrader
+      - name: Install immunity-firmware-upgrader
         run: |
           pip install -U -e .
           pip install ${{ matrix.django-version }}
@@ -67,7 +67,7 @@ jobs:
 
       - name: Tests
         run: |
-          coverage run -a --source=openwisp_firmware_upgrader runtests.py
+          coverage run -a --source=immunity_firmware_upgrader runtests.py
           # SAMPLE_APP tests do not affect coverage so can be run in parallel to speed up
           SAMPLE_APP=1 ./runtests.py --parallel
 

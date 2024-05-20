@@ -1,1 +1,1 @@
-Please refer to the `OpenWISP contributing guidelines <http://openwisp.io/docs/developer/contributing.html>`_.
+Please refer to the `Immunity contributing guidelines <http://immunity.io/docs/developer/contributing.html>`_.

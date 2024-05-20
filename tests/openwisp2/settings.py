@@ -10,8 +10,8 @@ ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': {
-        'ENGINE': 'openwisp_utils.db.backends.spatialite',
-        'NAME': 'openwisp-firmware-upgrader.db',
+        'ENGINE': 'immunity_utils.db.backends.spatialite',
+        'NAME': 'immunity-firmware-upgrader.db',
     }
 }
 
@@ -28,24 +28,24 @@ INSTALLED_APPS = [
     'django.contrib.gis',
     # all-auth
     'django.contrib.sites',
-    'openwisp_users.accounts',
+    'immunity_users.accounts',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'django_extensions',
     'private_storage',
-    # openwisp2 modules
-    'openwisp_controller.pki',
-    'openwisp_controller.config',
-    'openwisp_controller.connection',
-    'openwisp_controller.geo',
-    'openwisp_firmware_upgrader',
-    'openwisp_users',
-    'openwisp_notifications',
-    'openwisp_ipam',
-    # openwisp2 admin theme
+    # immunity2 modules
+    'immunity_controller.pki',
+    'immunity_controller.config',
+    'immunity_controller.connection',
+    'immunity_controller.geo',
+    'immunity_firmware_upgrader',
+    'immunity_users',
+    'immunity_notifications',
+    'immunity_ipam',
+    # immunity2 admin theme
     # (must be loaded here)
-    'openwisp_utils.admin_theme',
+    'immunity_utils.admin_theme',
     'admin_auto_filters',
     # admin
     'django.contrib.admin',
@@ -71,13 +71,13 @@ EXTENDED_APPS = [
     'django_loci',
 ]
 
-AUTH_USER_MODEL = 'openwisp_users.User'
+AUTH_USER_MODEL = 'immunity_users.User'
 SITE_ID = 1
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'openwisp_utils.staticfiles.DependencyFinder',
+    'immunity_utils.staticfiles.DependencyFinder',
 ]
 
 MIDDLEWARE = [
@@ -90,9 +90,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'openwisp2.urls'
+ROOT_URLCONF = 'immunity2.urls'
 
-ASGI_APPLICATION = 'openwisp2.routing.application'
+ASGI_APPLICATION = 'immunity2.routing.application'
 CHANNEL_LAYERS = {
     'default': {'BACKEND': 'channels.layers.InMemoryChannelLayer'},
 }
@@ -118,15 +118,15 @@ TEMPLATES = [
             'loaders': [
                 'django.template.loaders.filesystem.Loader',
                 'django.template.loaders.app_directories.Loader',
-                'openwisp_utils.loaders.DependencyLoader',
+                'immunity_utils.loaders.DependencyLoader',
             ],
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'openwisp_utils.admin_theme.context_processor.menu_groups',
-                'openwisp_notifications.context_processors.notification_api_settings',
+                'immunity_utils.admin_theme.context_processor.menu_groups',
+                'immunity_notifications.context_processors.notification_api_settings',
             ],
         },
     }
@@ -200,10 +200,10 @@ OPENWISP_FIRMWARE_UPGRADER_OPENWRT_SETTINGS = {
 }
 
 if os.environ.get('SAMPLE_APP', False):
-    firmware_upgrader_index = INSTALLED_APPS.index('openwisp_firmware_upgrader')
-    INSTALLED_APPS.remove('openwisp_firmware_upgrader')
-    EXTENDED_APPS.append('openwisp_firmware_upgrader')
-    INSTALLED_APPS.insert(firmware_upgrader_index, 'openwisp2.sample_firmware_upgrader')
+    firmware_upgrader_index = INSTALLED_APPS.index('immunity_firmware_upgrader')
+    INSTALLED_APPS.remove('immunity_firmware_upgrader')
+    EXTENDED_APPS.append('immunity_firmware_upgrader')
+    INSTALLED_APPS.insert(firmware_upgrader_index, 'immunity2.sample_firmware_upgrader')
     FIRMWARE_UPGRADER_CATEGORY_MODEL = 'sample_firmware_upgrader.Category'
     FIRMWARE_UPGRADER_BUILD_MODEL = 'sample_firmware_upgrader.Build'
     FIRMWARE_UPGRADER_FIRMWAREIMAGE_MODEL = 'sample_firmware_upgrader.FirmwareImage'
@@ -215,10 +215,10 @@ if os.environ.get('SAMPLE_APP', False):
         'sample_firmware_upgrader.UpgradeOperation'
     )
 
-TEST_RUNNER = 'openwisp_utils.tests.TimeLoggingTestRunner'
+TEST_RUNNER = 'immunity_utils.tests.TimeLoggingTestRunner'
 
 # local settings must be imported before test runner otherwise they'll be ignored
 try:
-    from openwisp2.local_settings import *
+    from immunity2.local_settings import *
 except ImportError:
     pass

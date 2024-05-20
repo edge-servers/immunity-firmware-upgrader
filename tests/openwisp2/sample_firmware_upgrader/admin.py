@@ -1,4 +1,4 @@
-from openwisp_firmware_upgrader.admin import (  # noqa
+from immunity_firmware_upgrader.admin import (  # noqa
     BatchUpgradeOperationAdmin,
     BuildAdmin,
     CategoryAdmin,

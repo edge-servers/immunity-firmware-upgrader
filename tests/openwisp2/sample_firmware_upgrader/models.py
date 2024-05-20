@@ -1,6 +1,6 @@
 from django.db import models
 
-from openwisp_firmware_upgrader.base.models import (
+from immunity_firmware_upgrader.base.models import (
     AbstractBatchUpgradeOperation,
     AbstractBuild,
     AbstractCategory,

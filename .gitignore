@@ -46,9 +46,9 @@ coverage.xml
 
 # Django stuff:
 *.log
-tests/openwisp2/media/
-tests/openwisp2/private/
-!tests/openwisp2/private/firmware/fake-img*.bin
+tests/immunity2/media/
+tests/immunity2/private/
+!tests/immunity2/private/firmware/fake-img*.bin
 
 # Sphinx documentation
 docs/_build/

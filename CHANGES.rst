@@ -13,14 +13,14 @@ Bugfixes
 --------
 
 - Fixed `hardcoded storage backend of the "FirmwareImage.file" field
-  <https://github.com/openwisp/openwisp-firmware-upgrader/issues/195>`_.
+  <https://github.com/edge-servers/immunity-firmware-upgrader/issues/195>`_.
   ``FirmwareImage.file`` was configured to use ``PrivateFileSystemStorage``,
   which made it impossible to use other private storage backends.
   The `"OPENWISP_FIRMWARE_PRIVATE_STORAGE_INSTANCE"
-  <https://github.com/openwisp/openwisp-firmware-upgrader#openwisp_firmware_private_storage_instance>`_
+  <https://github.com/edge-servers/immunity-firmware-upgrader#immunity_firmware_private_storage_instance>`_
   setting is added to make the ``FirmwareImage.file`` storage configurable.
 - Fixed `inconsistent URL keyword argument in "serve_private_file"
-  URL pattern <https://github.com/openwisp/openwisp-firmware-upgrader/issues/197>`_.
+  URL pattern <https://github.com/edge-servers/immunity-firmware-upgrader/issues/197>`_.
   This broke the reverse proxy feature of `django-private-storage
   <https://github.com/edoburu/django-private-storage>`_.
 
@@ -31,8 +31,8 @@ Features
 --------
 
 - Added ``version`` and ``os`` filters to the ``build`` endpoint
-- Added OpenWISP 1.x firmware upgrader (legacy)
-- Added support backfire in upgrades from OpenWISP 1.x (legacy)
+- Added Immunity 1.x firmware upgrader (legacy)
+- Added support backfire in upgrades from Immunity 1.x (legacy)
 - Added functionality in OpenWrt backend to free up memory before
   uploading the firmware image
 - Added following firmwares to the default firmware image map:
@@ -107,7 +107,7 @@ Dependencies
 - Dropped support for Django 2.2
 - Added support for Python 3.8 and 3.9
 - Added support for Django 3.2 and 4.0
-- Upgraded openwisp-controller to 1.0.x
+- Upgraded immunity-controller to 1.0.x
 
 Other changes
 ^^^^^^^^^^^^^
@@ -118,24 +118,24 @@ Other changes
   ``15`` to ``40``
 - Made firmware upgrade logs translatable
 - Changed the default API throttle rate from ``400/hour`` to ``1000/minute``
-- Added time limits to ``openwisp_firmware_upgrader.tasks.create_device_firmware``
-  and ``openwisp_firmware_upgrader.tasks.create_all_device_firmwares`` celery tasks
+- Added time limits to ``immunity_firmware_upgrader.tasks.create_device_firmware``
+  and ``immunity_firmware_upgrader.tasks.create_all_device_firmwares`` celery tasks
 
 Bugfixes
 --------
 
 - Fixed firmware checksum check
 - Improved error handling for upgrade operations
-- Remove openwisp-config persistent checksum:
-  openwisp-config 0.6.0 makes the checksum persistent,
+- Remove immunity-config persistent checksum:
+  immunity-config 0.6.0 makes the checksum persistent,
   but this causes upgraded devices to not download the configuration
   again after the upgrade, which is an issue if the configuration
   contains any file which is not stored in ``/etc/``.
 - Fixed a bug which caused ``Server 500`` error on creating a new
   ``Build`` object if ``category`` field was left empty
 - Fixed bugs in restoring deleted devices using ``django-reversion``
-- Fixed migrations referencing non-swappable OpenWISP modules
-  that broke OpenWISP's extensibility
+- Fixed migrations referencing non-swappable Immunity modules
+  that broke Immunity's extensibility
 
 Version 0.1.1 [2021-01-08]
 --------------------------

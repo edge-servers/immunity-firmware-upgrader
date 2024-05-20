@@ -3,4 +3,4 @@ omit =
     /*/__init__.py
     /*/tests/*
     /*/migrations/*
-    /*/upgraders/openwisp.py
+    /*/upgraders/immunity.py

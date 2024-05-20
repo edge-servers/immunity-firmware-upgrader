@@ -3,8 +3,8 @@
 
 # DATABASES = {
 #    'default': {
-#        'ENGINE': 'openwisp_utils.db.backends.spatialite',
-#        'NAME': 'openwisp-firmware-upgrader.db',
+#        'ENGINE': 'immunity_utils.db.backends.spatialite',
+#        'NAME': 'immunity-firmware-upgrader.db',
 #        'USER': '',
 #        'PASSWORD': '',
 #        'HOST': '',

@@ -1,7 +1,7 @@
 include LICENSE
 include README.rst
 include CHANGES.rst
-recursive-include openwisp_firmware_upgrader *
+recursive-include immunity_firmware_upgrader *
 recursive-exclude * *.pyc
 recursive-exclude * *.swp
 recursive-exclude * __pycache__

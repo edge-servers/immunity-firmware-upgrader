@@ -2,7 +2,7 @@
 
 from django.db import migrations
 
-from openwisp_firmware_upgrader.migrations import create_permissions_for_default_groups
+from immunity_firmware_upgrader.migrations import create_permissions_for_default_groups
 
 
 def create_permissions_for_default_groups_helper(apps, schema_editor):
