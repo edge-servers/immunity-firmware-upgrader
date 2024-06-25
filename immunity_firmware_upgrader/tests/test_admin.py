@@ -25,7 +25,8 @@ from immunity_utils.tests import capture_stderr
 
 from ..hardware import REVERSE_FIRMWARE_IMAGE_MAP
 from ..swapper import load_model
-from ..upgraders.immunity import OpenWisp1
+from ..upgraders.immunity import Immunity
+1
 from .base import TestUpgraderMixin
 
 User = get_user_model()
@@ -592,12 +593,14 @@ class TestAdminTransaction(BaseTestAdmin, TransactionTestCase):
             html=True,
         )
 
-    @mock.patch.object(OpenWisp1, 'SCHEMA', None)
+    @mock.patch.object(Immunity
+1, 'SCHEMA', None)
     def test_using_upgrade_options_with_unsupported_upgrader(self, *args):
         self._login()
         device_fw = self._create_device_firmware()
         device = device_fw.device
-        device.config.backend = 'netjsonconfig.OpenWisp'
+        device.config.backend = 'netjsonconfig.Immunity
+'
         device.config.save()
         device_conn = device.deviceconnection_set.first()
         device_conn.update_strategy = conn_settings.DEFAULT_UPDATE_STRATEGIES[1][0]

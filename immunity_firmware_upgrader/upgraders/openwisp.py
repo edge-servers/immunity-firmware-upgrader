@@ -6,7 +6,8 @@ from django.utils.translation import gettext_lazy as _
 from .openwrt import OpenWrt
 
 
-class OpenWisp1(OpenWrt):
+class Immunity
+1(OpenWrt):
     """
     Upgrader for Immunity 1.x
     Used to migrate legacy Immunity 1.x systems

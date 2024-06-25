@@ -16,7 +16,8 @@ Bugfixes
   <https://github.com/edge-servers/immunity-firmware-upgrader/issues/195>`_.
   ``FirmwareImage.file`` was configured to use ``PrivateFileSystemStorage``,
   which made it impossible to use other private storage backends.
-  The `"OPENWISP_FIRMWARE_PRIVATE_STORAGE_INSTANCE"
+  The `"IMMUNITY
+_FIRMWARE_PRIVATE_STORAGE_INSTANCE"
   <https://github.com/edge-servers/immunity-firmware-upgrader#immunity_firmware_private_storage_instance>`_
   setting is added to make the ``FirmwareImage.file`` storage configurable.
 - Fixed `inconsistent URL keyword argument in "serve_private_file"
@@ -96,7 +97,8 @@ Backward incompatible changes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - REST APIs are enabled by default. You can disable them by setting
-  ``OPENWISP_FIRMWARE_UPGRADER_API`` to ``False``.
+  ``IMMUNITY
+_FIRMWARE_UPGRADER_API`` to ``False``.
 - Changed REST API prefix from ``/upgrader/`` to ``/firmware-upgrader/``.
   This makes it consistent with REST API endpoints of other modules
 

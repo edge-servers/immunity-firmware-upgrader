@@ -288,7 +288,8 @@ Alternatively the `REST API <#rest-api>`__ can be used to automate this step.
 
 If you use a hardware model which is not listed in the image types, if the
 hardware model is officially supported by OpenWRT, you can send us a pull-request to add it,
-otherwise you can use `the setting OPENWISP_CUSTOM_OPENWRT_IMAGES <#immunity_custom_openwrt_images>`__
+otherwise you can use `the setting IMMUNITY
+_CUSTOM_OPENWRT_IMAGES <#immunity_custom_openwrt_images>`__
 to add it.
 
 4. Perform a firmware upgrade to a specific device
@@ -369,7 +370,8 @@ This value is then saved in the ``Device.model`` field.
 *Immunity Firmware Upgrader* uses this field to automatically detect
 the correct firmware image for the device.
 
-Use the `OPENWISP_CUSTOM_OPENWRT_IMAGES <#immunity_custom_openwrt_images>`_
+Use the `IMMUNITY
+_CUSTOM_OPENWRT_IMAGES <#immunity_custom_openwrt_images>`_
 setting to add additional firmware image in your project.
 
 Writing Custom Firmware Upgrader Classes
@@ -399,14 +401,16 @@ Here is an example custom OpenWrt firmware upgrader class:
             return self.UPGRADE_COMMAND
 
 You will need to place your custom upgrader class on the python path
-of your application and then add this path to the `OPENWISP_FIRMWARE_UPGRADERS_MAP
+of your application and then add this path to the `IMMUNITY
+_FIRMWARE_UPGRADERS_MAP
 <#immunity_firmware_upgraders_map>`_ setting.
 
 REST API
 --------
 
 To enable the API the setting
-`OPENWISP_FIRMWARE_UPGRADER_API <#immunity-firmware-upgrader-api>`_
+`IMMUNITY
+_FIRMWARE_UPGRADER_API <#immunity-firmware-upgrader-api>`_
 must be set to ``True``.
 
 Live documentation
@@ -750,7 +754,8 @@ Delete device firmware
 Settings
 --------
 
-``OPENWISP_FIRMWARE_UPGRADER_RETRY_OPTIONS``
+``IMMUNITY
+_FIRMWARE_UPGRADER_RETRY_OPTIONS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+--------------+
@@ -761,7 +766,8 @@ Settings
 
 .. code-block:: python
 
-    # default value of OPENWISP_FIRMWARE_UPGRADER_RETRY_OPTIONS:
+    # default value of IMMUNITY
+_FIRMWARE_UPGRADER_RETRY_OPTIONS:
 
     dict(
        max_retries=4,
@@ -781,7 +787,8 @@ For more information regarding these settings, consult the `celery documentation
 regarding automatic retries for known errors
 <https://docs.celeryproject.org/en/stable/userguide/tasks.html#automatic-retry-for-known-exceptions>`_.
 
-``OPENWISP_FIRMWARE_UPGRADER_TASK_TIMEOUT``
+``IMMUNITY
+_FIRMWARE_UPGRADER_TASK_TIMEOUT``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+--------------+
@@ -801,7 +808,8 @@ bug causes a specific task to hang, which will quickly fill all the available
 slots in a background queue and prevent other tasks from being executed, which
 will end up affecting negatively the rest of the application.
 
-``OPENWISP_CUSTOM_OPENWRT_IMAGES``
+``IMMUNITY
+_CUSTOM_OPENWRT_IMAGES``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------+
@@ -816,7 +824,8 @@ add support for custom OpenWrt images.
 
 .. code-block:: python
 
-    OPENWISP_CUSTOM_OPENWRT_IMAGES = (
+    IMMUNITY
+_CUSTOM_OPENWRT_IMAGES = (
         (
             # Firmware image file name.
             'customimage-squashfs-sysupgrade.bin', {
@@ -835,7 +844,8 @@ Kindly read `"Automatic detection of firmware of device"
 section of this documentation to know how *Immunity Firmware Upgrader*
 uses this setting in upgrades.
 
-``OPENWISP_FIRMWARE_UPGRADER_MAX_FILE_SIZE``
+``IMMUNITY
+_FIRMWARE_UPGRADER_MAX_FILE_SIZE``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+------------------------------+
@@ -848,13 +858,15 @@ This setting can be used to set the maximum size limit for firmware images, eg:
 
 .. code-block:: python
 
-    OPENWISP_FIRMWARE_UPGRADER_MAX_FILE_SIZE = 40 * 1024 * 1024  # 40MB
+    IMMUNITY
+_FIRMWARE_UPGRADER_MAX_FILE_SIZE = 40 * 1024 * 1024  # 40MB
 
 **Notes**:
 
 - Value must be specified in bytes. ``None`` means unlimited.
 
-``OPENWISP_FIRMWARE_UPGRADER_API``
+``IMMUNITY
+_FIRMWARE_UPGRADER_API``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-----------+
@@ -865,7 +877,8 @@ This setting can be used to set the maximum size limit for firmware images, eg:
 
 Indicates whether the API for Firmware Upgrader is enabled or not.
 
-``OPENWISP_FIRMWARE_UPGRADER_OPENWRT_SETTINGS``
+``IMMUNITY
+_FIRMWARE_UPGRADER_OPENWRT_SETTINGS``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-----------+
@@ -878,7 +891,8 @@ Allows changing the default OpenWRT upgrader settings, eg:
 
 .. code-block:: python
 
-    OPENWISP_FIRMWARE_UPGRADER_OPENWRT_SETTINGS = {
+    IMMUNITY
+_FIRMWARE_UPGRADER_OPENWRT_SETTINGS = {
         'reconnect_delay': 120,
         'reconnect_retry_delay': 20,
         'reconnect_max_retries': 15,
@@ -899,7 +913,8 @@ Allows changing the default OpenWRT upgrader settings, eg:
   useful in case  the upgrade command hangs (it happens on older OpenWRT versions);
   defaults to ``90`` seconds
 
-``OPENWISP_FIRMWARE_API_BASEURL``
+``IMMUNITY
+_FIRMWARE_API_BASEURL``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-----------------------------------+
@@ -913,7 +928,8 @@ different domain, you can use this option to change the base of the image
 download url, this will enable you to point to your API server's domain,
 example value: ``https://myfirmware.myapp.com``.
 
-``OPENWISP_FIRMWARE_UPGRADERS_MAP``
+``IMMUNITY
+_FIRMWARE_UPGRADERS_MAP``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------------------------------------------------------------------------------------------------------------------------+
@@ -935,7 +951,8 @@ If you need to use a `custom upgrader class <#writing-custom-firmware-upgrader-c
 you will need to use this setting to provide an entry with the class path of your upgrader
 as the value.
 
-``OPENWISP_FIRMWARE_PRIVATE_STORAGE_INSTANCE``
+``IMMUNITY
+_FIRMWARE_PRIVATE_STORAGE_INSTANCE``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------+-------------------------------------------------------------------------------------+
