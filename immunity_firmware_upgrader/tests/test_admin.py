@@ -599,8 +599,7 @@ class TestAdminTransaction(BaseTestAdmin, TransactionTestCase):
         self._login()
         device_fw = self._create_device_firmware()
         device = device_fw.device
-        device.config.backend = 'netjsonconfig.Immunity
-'
+        device.config.backend = 'netjsonconfig.Immunity'
         device.config.save()
         device_conn = device.deviceconnection_set.first()
         device_conn.update_strategy = conn_settings.DEFAULT_UPDATE_STRATEGIES[1][0]
